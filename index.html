@@ -1,106 +1,311 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>ครูพอใจ สุขหา - Portfolio & PA</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Prompt:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0058ba",
+              "primary-container": "#6c9fff",
+              "secondary": "#874e00",
+              "secondary-container": "#ffc791",
+              "tertiary": "#6d5a00",
+              "tertiary-container": "#fdd400",
+              "background": "#f5f6f7",
+              "surface": "#f5f6f7",
+              "on-surface": "#2c2f30",
+              "on-surface-variant": "#595c5d",
+            },
+            fontFamily: {
+              "headline": ["Prompt", "Be Vietnam Pro", "sans-serif"],
+              "body": ["Prompt", "Plus Jakarta Sans", "sans-serif"],
+              "label": ["Prompt", "Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: #f5f6f7;
+            color: #2c2f30;
+        }
+        .headline-font {
+            font-family: 'Prompt', sans-serif;
+            font-weight: 700;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #00c853;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+    </style>
 </head>
-<body>
-
-    <section id="hero" class="hero-section">
-        <div class="container hero-container">
-            <div class="profile-frame">
-                <img src="Profile.jpg" alt="ครูพอใจ สุขหา" class="profile-img">
+<body class="bg-background">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-[0_20px_40px_rgba(12,15,16,0.06)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-black bg-gradient-to-r from-blue-700 to-blue-400 bg-clip-text text-transparent headline-font">
+                PORJAI PA69
             </div>
-            <div class="hero-text">
-                <h1>นางสาวพอใจ สุขหา</h1>
-                <p class="en-name">PORJAI SUK-HA</p>
-                <div class="badge-container">
-                    <span class="badge main-badge">ครู วิทยฐานะชำนาญการพิเศษ</span>
-                    <span class="badge sub-badge">โรงเรียนเทศบาลท่าอิฐ</span>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-blue-700 border-b-2 border-blue-600 pb-1 font-bold tracking-tight headline-font" href="#hero">หน้าหลัก</a>
+                <a class="text-slate-600 hover:text-blue-500 font-bold tracking-tight headline-font" href="#achievements">ผลงาน</a>
+                <a class="text-slate-600 hover:text-blue-500 font-bold tracking-tight headline-font" href="#certificates">เกียรติบัตร</a>
+                <a class="text-slate-600 hover:text-blue-500 font-bold tracking-tight headline-font" href="#prompt-section">Prompt</a>
+                <a class="text-slate-600 hover:text-blue-500 font-bold tracking-tight headline-font" href="#gallery">แกลเลอรี</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden border-2 border-primary">
+                    <img alt="Profile" src="Profile.jpg" class="w-full h-full object-cover"/>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <main class="content">
-        <section class="info-grid container">
-            <div class="card card-teaching">
-                <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                <h2>ข้อมูลการสอน</h2>
-                <div class="card-body">
-                    <p><strong>วิชา:</strong> การงานอาชีพ</p>
-                    <p><strong>ระดับชั้น:</strong> ประถมศึกษาปีที่ 6</p>
-                    <p><strong>กลุ่มสาระการเรียนรู้:</strong> การงานอาชีพ</p>
-                </div>
-            </div>
-
-            <div class="card card-education">
-                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                <h2>ประวัติการศึกษา</h2>
-                <div class="card-body">
-                    <div class="edu-item">
-                        <div class="edu-year">ปริญญาโท</div>
-                        <div class="edu-desc">วิศวกรรมคอมพิวเตอร์ และปัญญาประดิษฐ์</div>
+    <main class="pt-24 pb-32">
+        <!-- Hero Section -->
+        <section id="hero" class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="relative flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+                <div class="relative w-full md:w-1/2">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl z-10 relative border-8 border-white">
+                        <img class="w-full h-full object-cover" src="Profile.jpg" alt="ครูพอใจ สุขหา"/>
                     </div>
-                    <div class="edu-item">
-                        <div class="edu-year">ปริญญาตรี</div>
-                        <div class="edu-desc">เทคโนโลยีและนวัตกรรมการศึกษา</div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-tertiary-container rounded-3xl -z-0"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-container/20 rounded-full -z-0"></div>
+                </div>
+                <div class="w-full md:w-1/2 space-y-8">
+                    <div class="space-y-4">
+                        <span class="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest font-label">ครู วิทยฐานะชำนาญการพิเศษ</span>
+                        <h1 class="text-5xl lg:text-6xl font-black text-on-surface headline-font leading-[1.1] tracking-tighter">
+                            นางสาวพอใจ <br/>
+                            <span class="text-primary italic">สุขหา</span>
+                        </h1>
+                        <p class="text-xl font-bold text-slate-500">PORJAI SUK-HA</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="profile-gallery" class="container">
-            <h2 class="section-title">รูปโปรไฟล์</h2>
-            <div class="profile-gallery-grid">
-                <div class="profile-card">
-                    <img src="Profile.jpg" alt="รูปโปรไฟล์ 1" class="gallery-img">
-                    <p>โปรไฟล์ 1</p>
-                </div>
-                <div class="profile-card">
-                    <img src="รูป/โปรไฟล์ 2.png" alt="รูปโปรไฟล์ 2" class="gallery-img">
-                    <p>โปรไฟล์ 2</p>
-                </div>
-                <div class="profile-card">
-                    <img src="หน้าปก สำหรับ website.jpg" alt="รูปโปรไฟล์ 3" class="gallery-img">
-                    <p>โปรไฟล์ 3</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="prompt-section" class="prompt-section container">
-            <div class="infographic-box">
-                <div class="info-header">
-                    <i class="fas fa-terminal"></i>
-                    <h2>Prompt สำหรับใช้งาน (PA)</h2>
-                </div>
-                <div class="info-content">
-                    <div class="prompt-container">
-                        <div id="promptContent" class="prompt-text">กำลังโหลดข้อความ...</div>
-                        <button id="copyBtn" class="copy-button">
-                            <i class="fas fa-copy"></i> คัดลอก Prompt
+                    <p class="text-xl text-on-surface-variant leading-relaxed max-w-lg">
+                        มุ่งเน้นการประยุกต์ใช้ความรู้ด้านเทคโนโลยี นวัตกรรมการศึกษา วิศวกรรมคอมพิวเตอร์ และปัญญาประดิษฐ์ (AI) มาใช้ในการจัดการเรียนการสอนวิชาการงานอาชีพ เพื่อพัฒนาทักษะอาชีพของนักเรียนให้สอดคล้องกับยุคดิจิทัล
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="เอกสารข้อตกลงในการทำpa/PA -1 พอใจ - 67 - 1 ปี 69.pdf" target="_blank" class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold text-lg shadow-lg hover:opacity-90 transition-all text-center">
+                            ดูเอกสาร PA
+                        </a>
+                        <button class="px-8 py-4 bg-white border border-slate-200 text-primary rounded-full font-bold text-lg hover:bg-slate-50 transition-all">
+                            โรงเรียนเทศบาลท่าอิฐ
                         </button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Achievements Bento Grid -->
+        <section id="achievements" class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="mb-12">
+                <span class="text-secondary font-bold uppercase text-sm tracking-widest font-label">Highlights</span>
+                <h2 class="text-4xl font-black text-on-surface headline-font">ประวัติและข้อมูลการสอน</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Large Featured Item -->
+                <div class="md:col-span-2 bg-white rounded-[1.5rem] p-10 flex flex-col justify-between relative overflow-hidden group shadow-sm">
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-6">
+                            <span class="material-symbols-outlined text-3xl">school</span>
+                        </div>
+                        <h3 class="text-3xl font-bold headline-font mb-4">ข้อมูลการสอน</h3>
+                        <div class="space-y-2 text-on-surface-variant text-lg">
+                            <p><strong>วิชา:</strong> การงานอาชีพ</p>
+                            <p><strong>ระดับชั้น:</strong> ประถมศึกษาปีที่ 6</p>
+                            <p><strong>กลุ่มสาระการเรียนรู้:</strong> การงานอาชีพ</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-500"></div>
+                </div>
+                
+                <!-- Education Item -->
+                <div class="bg-primary text-white rounded-[1.5rem] p-10 flex flex-col justify-center border-b-4 border-primary-container shadow-lg">
+                    <h4 class="font-bold text-xl headline-font mb-4">ประวัติการศึกษา</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-black text-2xl">ปริญญาโท</p>
+                            <p class="text-blue-100">วิศวกรรมคอมพิวเตอร์ และปัญญาประดิษฐ์</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/20">
+                            <p class="font-black text-2xl">ปริญญาตรี</p>
+                            <p class="text-blue-100">เทคโนโลยีและนวัตกรรมการศึกษา</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="bg-white rounded-[1.5rem] p-8 flex items-start gap-6 shadow-sm">
+                    <div class="w-12 h-12 shrink-0 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined">verified_user</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl headline-font mb-1">วิทยฐานะ</h4>
+                        <p class="text-on-surface-variant">ชำนาญการพิเศษ</p>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="bg-white rounded-[1.5rem] p-8 flex items-start gap-6 shadow-sm">
+                    <div class="w-12 h-12 shrink-0 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600">
+                        <span class="material-symbols-outlined">hub</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl headline-font mb-1">ความเชี่ยวชาญ</h4>
+                        <p class="text-on-surface-variant">AI และนวัตกรรมการศึกษา</p>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="bg-white rounded-[1.5rem] p-8 flex items-start gap-6 shadow-sm">
+                    <div class="w-12 h-12 shrink-0 bg-tertiary-container/20 rounded-xl flex items-center justify-center text-on-tertiary-container">
+                        <span class="material-symbols-outlined">location_on</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl headline-font mb-1">สังกัด</h4>
+                        <p class="text-on-surface-variant">โรงเรียนเทศบาลท่าอิฐ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prompt Section -->
+        <section id="prompt-section" class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="bg-slate-900 rounded-[2.5rem] p-12 lg:p-16 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="material-symbols-outlined text-4xl text-primary-container">terminal</span>
+                        <h2 class="text-4xl font-black headline-font">Prompt สำหรับใช้งาน (PA)</h2>
+                    </div>
+                    <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700">
+                        <div id="promptContent" class="text-lg leading-relaxed text-slate-300 font-mono mb-8">
+                            กำลังโหลดข้อความ...
+                        </div>
+                        <button id="copyBtn" class="flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-full font-bold hover:bg-blue-600 transition-all">
+                            <span class="material-symbols-outlined">content_copy</span>
+                            คัดลอก Prompt
+                        </button>
+                    </div>
+                </div>
+                <!-- Decorative background glow -->
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="max-w-7xl mx-auto px-8 mb-24">
+            <div class="mb-12">
+                <span class="text-secondary font-bold uppercase text-sm tracking-widest font-label">Credentials</span>
+                <h2 class="text-4xl font-black text-on-surface headline-font">เกียรติบัตรและใบประกอบวิชาชีพ</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-100 group">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4">
+                        <img src="ใบประกอบวิชาชีพ+วุฒิบัตร+เกียรติบัติ/246674_0.jpg" alt="เกียรติบัตร 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-center font-bold text-on-surface-variant">เกียรติบัตร/วุฒิบัตร 1</p>
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-100 group">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4">
+                        <img src="ใบประกอบวิชาชีพ+วุฒิบัตร+เกียรติบัติ/246675_0.jpg" alt="เกียรติบัตร 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-center font-bold text-on-surface-variant">เกียรติบัตร/วุฒิบัตร 2</p>
+                </div>
+                <div class="bg-white p-4 rounded-3xl shadow-sm border border-slate-100 group">
+                    <div class="aspect-[3/4] rounded-2xl overflow-hidden mb-4">
+                        <img src="ใบประกอบวิชาชีพ+วุฒิบัตร+เกียรติบัติ/246676_0.jpg" alt="เกียรติบัตร 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <p class="text-center font-bold text-on-surface-variant">เกียรติบัตร/วุฒิบัตร 3</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="max-w-7xl mx-auto px-8">
+            <div class="mb-12">
+                <span class="text-secondary font-bold uppercase text-sm tracking-widest font-label">Visuals</span>
+                <h2 class="text-4xl font-black text-on-surface headline-font">แกลเลอรีรูปภาพ</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="Profile.jpg" alt="โปรไฟล์ 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-bold">โปรไฟล์ 1</p>
+                    </div>
+                </div>
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="รูป/โปรไฟล์ 2.png" alt="โปรไฟล์ 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-bold">โปรไฟล์ 2</p>
+                    </div>
+                </div>
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="หน้าปก สำหรับ website.jpg" alt="โปรไฟล์ 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                        <p class="text-white font-bold">โปรไฟล์ 3</p>
+                    </div>
+                </div>
+                <!-- Additional Images -->
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="รูป/246662_0.jpg" alt="กิจกรรม 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="รูป/246672_0.jpg" alt="กิจกรรม 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative aspect-square rounded-3xl overflow-hidden shadow-md">
+                    <img src="รูป/IMG_20251220_082033.jpg" alt="กิจกรรม 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2026 นางสาวพอใจ สุขหา - โรงเรียนเทศบาลท่าอิฐ</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="https://github.com/porjaisukha/pa69-1.git" target="_blank"><i class="fab fa-github"></i></a>
+    <!-- Footer -->
+    <footer class="w-full bg-white py-12 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-black text-xl text-primary headline-font">PORJAI PA69</div>
+            <p class="text-slate-500">© 2026 นางสาวพอใจ สุขหา - โรงเรียนเทศบาลท่าอิฐ</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-slate-400 hover:text-primary"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="https://github.com/porjaisukha/pa69-1.git" target="_blank" class="text-slate-400 hover:text-primary"><i class="fab fa-github text-2xl"></i></a>
             </div>
         </div>
     </footer>
 
-    <div id="toast" class="toast">คัดลอกข้อความแล้ว!</div>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined">check_circle</span>
+            คัดลอกลงคลิปบอร์ดแล้ว!
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
