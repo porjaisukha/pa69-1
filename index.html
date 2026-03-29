@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครูพอใจ สุขหา - Portfolio & PA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <section id="hero" class="hero-section">
+        <div class="container hero-container">
+            <div class="profile-frame">
+                <img src="Profile.jpg" alt="ครูพอใจ สุขหา" class="profile-img">
+            </div>
+            <div class="hero-text">
+                <h1>นางสาวพอใจ สุขหา</h1>
+                <p class="en-name">PORJAI SUK-HA</p>
+                <div class="badge-container">
+                    <span class="badge main-badge">ครู วิทยฐานะชำนาญการพิเศษ</span>
+                    <span class="badge sub-badge">โรงเรียนเทศบาลท่าอิฐ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="content">
+        <section class="info-grid container">
+            <div class="card card-teaching">
+                <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h2>ข้อมูลการสอน</h2>
+                <div class="card-body">
+                    <p><strong>วิชา:</strong> การงานอาชีพ</p>
+                    <p><strong>ระดับชั้น:</strong> ประถมศึกษาปีที่ 6</p>
+                    <p><strong>กลุ่มสาระการเรียนรู้:</strong> การงานอาชีพ</p>
+                </div>
+            </div>
+
+            <div class="card card-education">
+                <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h2>ประวัติการศึกษา</h2>
+                <div class="card-body">
+                    <div class="edu-item">
+                        <div class="edu-year">ปริญญาโท</div>
+                        <div class="edu-desc">วิศวกรรมคอมพิวเตอร์ และปัญญาประดิษฐ์</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-year">ปริญญาตรี</div>
+                        <div class="edu-desc">เทคโนโลยีและนวัตกรรมการศึกษา</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="profile-gallery" class="container">
+            <h2 class="section-title">รูปโปรไฟล์</h2>
+            <div class="profile-gallery-grid">
+                <div class="profile-card">
+                    <img src="Profile.jpg" alt="รูปโปรไฟล์ 1" class="gallery-img">
+                    <p>โปรไฟล์ 1</p>
+                </div>
+                <div class="profile-card">
+                    <img src="รูป/โปรไฟล์ 2.png" alt="รูปโปรไฟล์ 2" class="gallery-img">
+                    <p>โปรไฟล์ 2</p>
+                </div>
+                <div class="profile-card">
+                    <img src="หน้าปก สำหรับ website.jpg" alt="รูปโปรไฟล์ 3" class="gallery-img">
+                    <p>โปรไฟล์ 3</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prompt-section" class="prompt-section container">
+            <div class="infographic-box">
+                <div class="info-header">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Prompt สำหรับใช้งาน (PA)</h2>
+                </div>
+                <div class="info-content">
+                    <div class="prompt-container">
+                        <div id="promptContent" class="prompt-text">กำลังโหลดข้อความ...</div>
+                        <button id="copyBtn" class="copy-button">
+                            <i class="fas fa-copy"></i> คัดลอก Prompt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 นางสาวพอใจ สุขหา - โรงเรียนเทศบาลท่าอิฐ</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://github.com/porjaisukha/pa69-1.git" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast" class="toast">คัดลอกข้อความแล้ว!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
